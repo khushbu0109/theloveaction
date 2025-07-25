@@ -1,0 +1,122 @@
+.container {
+    background: #000;
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+    overflow: hidden;
+    position: relative;
+    isolation: isolate;
+}
+
+.title {
+    color: white;
+    font-family: 'Poppins', sans-serif;
+    font-size: clamp(2rem, 5vw, 4rem);
+    margin-bottom: 80px;
+    z-index: 2;
+}
+
+.thank {
+    color: #fff;
+    font-family: 'Poppins', sans-serif;
+    font-size: clamp(1rem, 3vw, 2rem);
+    margin-bottom: 50px;
+    z-index: 2;
+}
+
+.top {
+    color: #fff;
+    font-family: 'Poppins', sans-serif;
+    font-size: clamp(0.9rem, 2.5vw, 1.5rem);
+    margin-bottom: 100px;
+    z-index: 2;
+}
+
+.heart {
+    width: 100px;
+    height: 90px;
+    position: relative;
+    transform: rotate(-45deg);
+    animation: beat 1s infinite;
+    background: red;
+    z-index: 2;
+}
+
+.heart::before,
+.heart::after {
+    content: "";
+    width: 100px;
+    height: 90px;
+    background: red;
+    border-radius: 50%;
+    position: absolute;
+}
+
+.heart::before {
+    top: -50px;
+    left: 0;
+}
+
+.heart::after {
+    left: 50px;
+    top: 0;
+}
+
+@keyframes beat {
+
+    0%,
+    100% {
+        transform: scale(1) rotate(-45deg);
+    }
+
+    50% {
+        transform: scale(1.2) rotate(-45deg);
+    }
+}
+
+.smallHeart {
+    position: absolute;
+    width: 15px;
+    height: 15px;
+    background: red;
+    transform: rotate(45deg);
+    opacity: 0.8;
+    animation: float 5s linear infinite;
+    z-index: 1;
+}
+
+.smallHeart::before,
+.smallHeart::after {
+    content: "";
+    position: absolute;
+    width: 15px;
+    height: 15px;
+    background: red;
+    border-radius: 50%;
+}
+
+.smallHeart::before {
+    top: -7px;
+    left: 0;
+}
+
+.smallHeart::after {
+    left: 7px;
+    top: 0;
+}
+
+@keyframes float {
+    0% {
+        transform: translateY(0) rotate(45deg);
+        opacity: 0.8;
+    }
+
+    100% {
+        transform: translateY(-120vh) rotate(45deg);
+        opacity: 0;
+    }
+}
